@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"runtime"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -16,7 +17,7 @@ const delay = monitoramentos + 2
 
 func main() {
 	showIntroduction()
-	readSitesFile()
+
 	for {
 
 		showMenu()
@@ -92,8 +93,10 @@ func testSite(site string) {
 
 	if response.StatusCode == 200 {
 		fmt.Println("Site", site, "foi carregado com sucesso")
+		registerLogs(site, true)
 	} else {
 		fmt.Println("Site:", site, "não foi carregado e está com problemas. Status code:", response.StatusCode)
+		registerLogs(site, false)
 	}
 }
 
@@ -124,4 +127,16 @@ func readSitesFile() []string {
 	file.Close()
 
 	return sites
+}
+
+func registerLogs(site string, status bool) {
+	file, err := os.OpenFile("logs.txt", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0755) // Ler documentação pra entrar melhor a OpenFile
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	file.WriteString(time.Now().Format("02/01/2006 15:04:05") + " - " + site + " - online: " + strconv.FormatBool(status) + "\n")
+
+	file.Close()
 }
