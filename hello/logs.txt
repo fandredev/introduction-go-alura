@@ -11,3 +11,15 @@
 08/12/2022 13:23:48 - https://www.zapsign.com.br - online: true
 08/12/2022 13:23:49 - https://random-status-code.herokuapp.com/ - online: false
 08/12/2022 13:23:49 - https://zapsign.co - online: true
+08/12/2022 13:45:56 - https://www.alura.com.br - online: true
+08/12/2022 13:45:56 - https://www.zapsign.com.br - online: true
+08/12/2022 13:45:56 - https://random-status-code.herokuapp.com/ - online: false
+08/12/2022 13:45:56 - https://zapsign.co - online: true
+08/12/2022 13:46:02 - https://www.alura.com.br - online: true
+08/12/2022 13:46:02 - https://www.zapsign.com.br - online: true
+08/12/2022 13:46:02 - https://random-status-code.herokuapp.com/ - online: false
+08/12/2022 13:46:02 - https://zapsign.co - online: true
+08/12/2022 13:46:07 - https://www.alura.com.br - online: true
+08/12/2022 13:46:07 - https://www.zapsign.com.br - online: true
+08/12/2022 13:46:08 - https://random-status-code.herokuapp.com/ - online: false
+08/12/2022 13:46:08 - https://zapsign.co - online: true

@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"runtime"
@@ -29,6 +30,7 @@ func main() {
 			startMonitoring()
 		case 2:
 			fmt.Println("Exibindo Logs")
+			showLogs()
 		case 0:
 			fmt.Println("Saindo do programa")
 			os.Exit(0)
@@ -138,5 +140,14 @@ func registerLogs(site string, status bool) {
 
 	file.WriteString(time.Now().Format("02/01/2006 15:04:05") + " - " + site + " - online: " + strconv.FormatBool(status) + "\n")
 
-	file.Close()
+	file.Close() // Fecha o arquivo ao terminar de usar
+}
+
+func showLogs() {
+	file, err := ioutil.ReadFile("logs.txt") // Aqui o arquivo é fechado automaticamente
+
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(string(file))
 }
